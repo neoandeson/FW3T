@@ -25,6 +25,15 @@ namespace FoodWeb.Service
 
     public class ProductService : IProductService
     {
+        private readonly IProductRepository ProductRepository;
+        private readonly IUnitOfWork unitOfWork;
+
+        public ProductService(IProductRepository ProductRepository, IUnitOfWork unitOfWork)
+        {
+            this.ProductRepository = ProductRepository;
+            this.unitOfWork = unitOfWork;
+        }
+
         public void AddSubProduct(int ownId, int subId)
         {
             throw new NotImplementedException();
@@ -52,7 +61,10 @@ namespace FoodWeb.Service
 
         public IEnumerable<product> GetProducts(string name = null)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(name))
+                return ProductRepository.GetAll();
+            else
+                return ProductRepository.GetAll().Where(c => c.Name.Equals(name));
         }
 
         public void RemoveProduct(int id)

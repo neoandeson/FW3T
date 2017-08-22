@@ -10,3 +10,15 @@ F:\WebPhrase\Full\FoodWeb\FoodWeb.Service\bin\Debug\EntityFramework.xml
 F:\WebPhrase\Full\FoodWeb\FoodWeb.Service\obj\Debug\FoodWeb.Service.csprojResolveAssemblyReference.cache
 F:\WebPhrase\Full\FoodWeb\FoodWeb.Service\obj\Debug\FoodWeb.Service.dll
 F:\WebPhrase\Full\FoodWeb\FoodWeb.Service\obj\Debug\FoodWeb.Service.pdb
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\FoodWeb.Service.dll
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\FoodWeb.Service.pdb
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\FoodWeb.Data.dll
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\FoodWeb.Model.dll
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\EntityFramework.dll
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\FoodWeb.Data.pdb
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\FoodWeb.Model.pdb
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\FoodWeb.Model.dll.config
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\bin\Debug\EntityFramework.xml
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\obj\Debug\FoodWeb.Service.csprojResolveAssemblyReference.cache
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\obj\Debug\FoodWeb.Service.dll
+F:\WebPhrase\Git\FW3T\BackEnd\FoodWeb\FoodWeb.Service\obj\Debug\FoodWeb.Service.pdb

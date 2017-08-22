@@ -1,4 +1,5 @@
 ﻿using FoodWeb.Service;
+using FoodWeb.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,16 @@ namespace FoodWeb.Controllers
         public IHttpActionResult GetProducts()
         {
             var products = _productService.GetProducts().ToList();
-            return Ok(products);
+            List<ProductViewModel> li = new List<ProductViewModel>();
+            ProductViewModel pvm;
+            foreach (var tmp in products)
+            {
+                pvm = new ProductViewModel();
+                pvm.Id = tmp.ID;
+                pvm.Name = tmp.Name;
+                li.Add(pvm);
+            }
+            return Ok(li);
         }
     }
 }
