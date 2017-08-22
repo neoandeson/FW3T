@@ -1,0 +1,60 @@
+.thName {
+    width: 30em;
+    overflow: scroll;
+}
+
+.thPrice {
+    width: 7em;
+    overflow: visible;
+}
+
+th{
+    padding-bottom: 5px;
+}
+
+tr{
+    border-bottom: solid 1px #acacac;
+}
+
+td {
+    padding: 1em;
+}
+
+th {
+    padding-left: 1em;
+}
+table {
+    font-size: 1.2em;
+    margin-left: 20%;
+}
+
+.tbody{
+    background-color: cornsilk;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    min-height: 22em !important;
+}
+
+.btn-success {
+    width: 100%;
+}
+
+.btn-minute {
+    width: 1.7em;
+    border-radius: 20px;
+    margin-top: 0;
+    color: white;
+    background-color: grey!important;
+}
+
+.btn-plus {
+    width: 1.7em;
+    border-radius: 20px;
+    margin-top: 0;
+    color: white;
+    background-color: green !important;
+}
+.sumtr {
+    color: white;
+    background-color: #ff8d64;
+}

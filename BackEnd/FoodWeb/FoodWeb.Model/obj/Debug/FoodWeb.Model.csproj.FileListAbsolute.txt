@@ -1,0 +1,10 @@
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\bin\Debug\FoodWeb.Model.dll.config
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\bin\Debug\FoodWeb.Model.dll
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\bin\Debug\FoodWeb.Model.pdb
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\bin\Debug\EntityFramework.dll
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\bin\Debug\EntityFramework.xml
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\obj\Debug\FoodWeb.Model.csprojResolveAssemblyReference.cache
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\obj\Debug\FoodWeb.Model.dll
+F:\WebPhrase\Full\FoodWeb\FoodWeb.Model\obj\Debug\FoodWeb.Model.pdb

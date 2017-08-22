@@ -1,0 +1,646 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0, user-scalable=0">
+    <meta name="description" content="Dat giao mon an">
+    <title>Dat mon an truc tuyen</title>
+    <link rel="stylesheet" href="@Url.Content("~/Content/myCSS/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/fonts/font-awesome-4.7.0/css/font-awesome.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/myCSS/home.css")">
+
+</head>
+
+<body>
+    <!--
+        <div class="tads">
+            <img class="tadsImg" src="img/hisu-lee-86681.jpg">
+        </div>
+    -->
+    <div id="theader" class="theader">
+        <div class="container-fluid theadContain">
+            <img class="theadLogo col-sm-3 col-md-4 col-lg-5" src="~/Images/logo.png">
+            <div id="tNavBarMenu" class="tNavBarMenu col-lg-8">
+                <ul class="tmainMenu">
+                    <li><a class="tmainMenua" href="@Url.Content("~/MainPage")">Đặt Giao Hàng</a></li>
+                    <li><a class="tmainMenua" href="#">Bài Viết</a></li>
+                    <li><a class="tmainMenua" href="#">Liên Hệ</a></li>
+                    <li>
+                        <a class="tmainMenua" href="@Url.Content("~/CartPage")">Giỏ Hàng</a>
+                        <div class="tCartNumber" id="tCartNumber">19</div>
+                    </li>
+                    <li><a class="tmainMenua" href="login.html" id="tLogin">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="theadLine">
+        </div>
+    </div>
+    <div class="tbody">
+        <div id="divSideNav" class="tSideNav">
+            <div class="tSideNavSearchPlace">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <!--input-group-->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control tSearchInput" placeholder="Tìm kiếm...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="width: 100%">
+                    <nav id="column_left">
+                        <ul class="nav nav-list">
+                            <!--                            <li><a>Dashboard</a></li>-->
+                            <li>
+                                <a class="accordion-heading lv1Menu" data-toggle="collapse" data-target="#submenuCity">
+                                    <span class="nav-header-primary">Thành Phố <span class="pull-right"><b class="caret"></b></span></span>
+                                </a>
+
+                                <ul class="nav nav-list collapse" id="submenuCity">
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuTPHCMQuan">TPHCM <span class="pull-right"><b class="caret"></b></span></a>
+                                        <ul class="nav nav-list collapse" id="submenuTPHCMQuan">
+                                            <li><a href="#" title="Title" class="lv3Menu">Quận 1</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Quận 2</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Quận 4</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Quận 5</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Quận 10</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Quận 11</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Quận Tân Phú</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="accordion-heading lv1Menu" data-toggle="collapse" data-target="#submenuKind">
+                                    <span class="nav-header-primary">Loại Hình <span class="pull-right"><b class="caret"></b></span></span>
+                                </a>
+
+                                <ul class="nav nav-list collapse" id="submenuKind">
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuTPHCMQuan">Ăn no</a>
+                                    </li>
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuTPHCMQuan">Ăn Vat</a>
+                                    </li>
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuTPHCMQuan">Tiệc tùng</a>
+                                    </li>
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuTPHCMQuan">Tráng Miệng</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="accordion-heading lv1Menu" data-toggle="collapse" data-target="#submenuDrink">
+                                    <span class="nav-header-primary">Thức uống <span class="pull-right"><b class="caret"></b></span></span>
+                                </a>
+
+                                <ul class="nav nav-list collapse" id="submenuDrink">
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuTraSua">Trà Sữa <span class="pull-right"><b class="caret"></b></span></a>
+                                        <ul class="nav nav-list collapse" id="submenuTraSua">
+                                            <li><a href="#" title="Title" class="lv3Menu">Thạch</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Ít Đường</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuCoffee">Coffee <span class="pull-right"><b class="caret"></b></span></a>
+                                        <ul class="nav nav-list collapse" id="submenuCoffee">
+                                            <li><a href="#" title="Title" class="lv3Menu">Expresso</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Capuchino</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Latte</a></li>
+                                            <li><a href="#" title="Title" class="lv3Menu">Cream</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="accordion-heading lv1Menu" data-toggle="collapse" data-target="#submenuCake">
+                                    <span class="nav-header-primary">Bánh <span class="pull-right"><b class="caret"></b></span></span>
+                                </a>
+
+                                <ul class="nav nav-list collapse" id="submenuCake">
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuPudding">Bánh Ngọt </a>
+                                    </li>
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuPudding">Bánh Mặn </a>
+                                    </li>
+                                    <li>
+                                        <a class="accordion-heading lv2Menu" data-toggle="collapse" data-target="#submenuPudding">Bánh Dân Gian</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+
+                </div>
+
+            </div>
+        </div>
+        <div class="tSideContent">
+            <div class="tContainer">
+                <!------PopUpModal----->
+                <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Ten Mon An</h4>
+                                <input type="hidden" id="idMonAn" value="1">
+                                <input type="hidden" id="tenMonAn" value="Mon an So 1">
+                                <input type="hidden" id="giaMonAn" value="20000">
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <ul class="nav nav-tabs" id="tabContent">
+                                    <li class="active"><a href="#DetailsPane" data-toggle="tab">Thông tin</a></li>
+                                    <li><a href="#CommentPane" data-toggle="tab">Đánh giá</a></li>
+                                    <li><a href="#OrderPane" data-toggle="tab">Đặt hàng</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="DetailsPane">
+                                        <div class="control-group DetailsPane">
+                                            <label class="control-label">
+                                                <h3>Mon an so 1</h3>
+                                            </label>
+                                            <h4>
+                                                Món phở được coi là tinh hoa ẩm thực của người dân Thủ đô. Phở ở đây rất ngon và có nhiều vị như phở bò, phở gà cùng nhiều thương hiệu nổi tiếng như Phở Thìn, Phở Lý Quốc Sư, Phở Bát Đàn…. Không chỉ là món ăn quen thuộc của người dân mà phở còn là “đặc sản” mà bất cứ du khách nước ngoài nào đến Hà Nội đều muốn thưởng thức ít nhất 1 lần.
+                                            </h4>
+                                            <img src="../assets/img/food/6.jpg">
+                                            <img src="../assets/img/food/7.jpg">
+                                            <img src="../assets/img/food/8.jpg">
+                                            <img src="../assets/img/food/9.jpg">
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane" id="CommentPane">
+                                        Binh chon:
+                                        <div class="tPopUp_Rating">
+                                            <b class="glyphicon glyphicon-star"></b>
+                                            <b class="glyphicon glyphicon-star"></b>
+                                            <b class="glyphicon glyphicon-star"></b>
+                                            <b class="glyphicon glyphicon-star"></b>
+                                            <b class="glyphicon glyphicon-star"></b>
+                                        </div>
+                                        <br />Binh luan: <br />
+                                        <h5>Mon nay ngon lam</h5>
+                                        <h5>Mon nay ngon lam</h5>
+                                        <h5>Mon nay ngon lam</h5>
+                                        <h5>Mon nay ngon lam</h5>
+                                    </div>
+                                    <div class="tab-pane OrderPane" id="OrderPane">
+                                        <img src="../assets/img/food/11.jpg">
+                                        <div class="popupContent">
+                                            <!--                                        <button class="notAvailable"></button>Tạm ngưng phục vụ-->
+                                            <button class="available"></button>&nbsp;Sẵn sàng phục vụ<br />
+                                            <i class="fa fa-money"></i> 30000 vnđ<br />
+                                            <button class="btn-primary btn-minute">-</button>
+                                            <b>10</b>
+                                            <button class="btn-primary btn-plus">+</button>
+                                            &nbsp; <button class="btn btn-success">Đặt</button>
+                                            <br />
+                                            <img src="~/Images/Pay.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                                    <div class="modal-footer">
+                                        <input type="number" id="idSoluong" value="1" min="1" class="inputQuantity">
+                                        <button type="button" class="btn btn-success" onclick="addAFood()">Dat</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <!----Rows----->
+                <div id="rows">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal" onclick="updatePopUp(1)">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/1.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 30%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/2.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 20%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/3.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 15%</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/1.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 30%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/2.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 20%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/3.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 15%</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/1.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 30%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/2.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 20%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/3.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 15%</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/1.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 30%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/2.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 20%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/3.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 15%</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/1.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 30%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/2.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 20%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 tBlock" data-toggle="modal" data-target="#myModal">
+                            <div class="tBlockImg">
+                                <img src="../assets/img/food/3.jpg">
+                            </div>
+                            <div class="tBlockDescription">
+                                <b>Day La Ten Mon An</b>
+                                <p>Day la phan gioi thieu mon an Day la phan gioi thieu mon an</p>
+                            </div>
+                            <div class="tBlockFunction">
+                                <div class="tBlockFunction_Rating">
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                    <b class="glyphicon glyphicon-star"></b>
+                                </div>
+                                <div class="tBlockFunction_Function">
+                                    <h4>Giam 15%</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!--------button load more----------->
+                <div id="loadMoreButton" class="loadMoreButton">
+                    <button class="btn btn-success">Load More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tfooter">
+        <div class="tFooterAbout">
+            <div>
+                <div class="col-12 col-sm-6 col-md-4 text-center h5">
+                    <div class="h1">
+                        <i class="fa fa-shield footerIcons" aria-hidden="true"></i>
+                    </div>
+                    <p class="lead">An Toàn</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 text-center h5">
+                    <div class="h1">
+                        <i class="fa fa-credit-card footerIcons" aria-hidden="true"></i>
+                    </div>
+                    <p class="lead">Thanh Toán bằng tiền mặt</p>
+                </div>
+                <div class="col-12 col-md-4 text-center h5">
+                    <div class="h1">
+                        <i class="fa fa-rocket footerIcons" aria-hidden="true"></i>
+                    </div>
+                    <p class="lead">Ship nhanh</p>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <div>
+                <ul class="ulBig">
+                    <li>
+                        <ul>
+                            <li class="tFooterAbout_HeadLine">Về chúng tôi</li>
+                            <li><a class="tFooterAbout_a">Ý tưởng</a></li>
+                            <li><a class="tFooterAbout_a">Chính sách</a></li>
+                            <li><a class="tFooterAbout_a">Điều khoản</a></li>
+                            <li><a class="tFooterAbout_a">Cam kết</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li class="tFooterAbout_HeadLine">Liên hệ</li>
+                            <li><a class="tFooterAbout_a">Tuyển dụng</a></li>
+                            <li><a class="tFooterAbout_a">Đăng ký cấp hàng</a></li>
+                            <li><a class="tFooterAbout_a">Đăng ký</a></li>
+                            <li><a class="tFooterAbout_a">Hợp tác</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li class="tFooterAbout_HeadLine">Liên kết ngoài</li>
+                            <li><a class="tFooterAbout_a">Facebook</a></li>
+                            <li><a class="tFooterAbout_a">Instagram</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tFooterContact">
+            ©2017 TableNow – Đặt chỗ & Ưu đãi - A Foody Corporation ĐC: Lầu 8, Tòa nhà Jabes 1, 244 Cống Quỳnh, P. Phạm Ngũ Lão, Quận 1, Tp.HCM - Hotline: 1900 6044 <br /> Số giấy phép ĐKKD: 0311828036 do sở Kế hoạch và Đầu Tư TPHCM cấp ngày 11/06/2012
+        </div>
+    </div>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/home.js")"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Cookie Cart-->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/cookies-base.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/badge-count.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/food-list.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/shopping-cart.js")"></script>
+    
+</body>
+
+</html>

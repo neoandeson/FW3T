@@ -1,0 +1,191 @@
+.food>.row {
+    width: 90%;
+    margin: auto;
+    max-width: 500px;
+    height: 120px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: white;
+}
+
+.food a {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    color: black;
+    text-decoration: initial;
+}
+
+.food a:hover {
+    text-decoration: initial;
+}
+
+@media screen and (min-width:768px) {
+    .food:nth-of-type(odd)>.row {
+        margin-right: 10px;
+        margin-left: auto;
+    }
+    .food:nth-of-type(even)>.row {
+        margin-left: 10px;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .food:nth-of-type(odd)>.row {
+        margin-right: 20px;
+        margin-left: auto;
+    }
+    .food:nth-of-type(even)>.row {
+        margin-left: 20px;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .food:nth-of-type(odd)>.row {
+        margin-right: 30px;
+        margin-left: auto;
+    }
+    .food:nth-of-type(even)>.row {
+        margin-left: 30px;
+        margin-right: auto;
+    }
+}
+
+.food .img {
+    background-size: 100%;
+    background-position-y: center;
+}
+
+.food .food-detail {
+    padding-top: 5px;
+}
+
+.food .food-detail .food-name {
+    font-weight: 600;
+    font-family: cursive;
+    font-size: 1.5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.shadow-pulse {
+    animation-name: shadowPulse;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes invertShadowPulse {
+    0% {
+        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.invert-shadow-pulse {
+    animation-name: invertShadowPulse;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.img-raised-less {
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.1);
+}
+
+.food .food-type {
+    font-weight: 200;
+    font-family: cursive;
+}
+
+.food .food-tags {
+    margin-top: 15px;
+    border-top: 1px solid black;
+    height: 40px;
+    padding-top: 12px;
+    padding-left: 2px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.food .food-tags .food-delivery-time {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.product-list-page .section {
+    background-color: rgb(252, 255, 237);
+}
+
+.filter.search {
+    /*border: 1px solid black;*/
+    position: absolute;
+    z-index: 100;
+    width: fit-content;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto;
+    top: -50px;
+}
+
+.modal .modal-body .modal-title {
+    padding-bottom: 15px;
+}
+
+.option {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.option-title {
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.option .option-quantity {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+.option .btn.btn-icon.btn-icon-mini {
+    width: 33px;
+    height: 33px;
+    margin: 0px 4px;
+}
+
+.modal-food img {
+    width: 100%;
+}
+
+.modal-food .modal-title {
+    padding-left: 20px;
+}
+
+.option .option-price {
+    text-align: right;
+}
+
+.modal-food .modal-description {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+}
