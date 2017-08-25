@@ -6,6 +6,10 @@ body {
     display: none;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 @media screen and (min-width: 770px) {
     .tads {
         width: 100%;
@@ -275,17 +279,22 @@ body {
         height: 16em;
     }
     .popupContent {
-        padding: 2em;
+        padding: 0 1em 0 2em;
         float: right;
         width: 38em;
         height: 15em;
     }
+    .popUpContent_Description {
+        width: 100%;
+        height: 5em;
+        background-color: aquamarine;
+    } 
     .btn-minute {
         width: 1.7em;
         border-radius: 20px;
         margin-top: 0;
         color: white;
-        background-color: grey!important;
+        background-color: grey !important;
     }
     .btn-plus {
         width: 1.7em;

@@ -1,5 +1,5 @@
 function setCookie(name, value, days) {
-    alert(name + ' ' + value + ' ' + days);
+    
     var expires;
 
     if (days) {

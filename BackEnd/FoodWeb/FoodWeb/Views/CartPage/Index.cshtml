@@ -29,7 +29,7 @@
                     <li><a class="tmainMenua" href="#">Liên Hệ</a></li>
                     <li>
                         <a class="tmainMenua" href="@Url.Content("~/CartPage")">Giỏ Hàng</a>
-                        <div class="tCartNumber" id="tCartNumber">1</div>
+                        <div class="tCartNumber" id="badge-count">1</div>
                     </li>
                     <li><a class="tmainMenua" href="login.html" id="tLogin">Đăng nhập</a></li>
                 </ul>
@@ -39,112 +39,89 @@
         </div>
     </div>
     <div class="tbody">
-        <table>
+        <table id="tTable">
             <thead>
-            <th>ID</th>
-            <th class="thName">Ten Mon</th>
-            <th class="thPrice">Gia</th>
-            <th>So Luong</th>
+                <th>ID</th>
+                <th class="thName">Ten Mon</th>
+                <th class="thPrice">Giá</th>
+                <th>Số lượng</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Mon so 1</td>
-                    <td>20000</td>
-                    <td>
-                        <button class="btn-primary btn-minute">-</button>
-                        <b>10</b>
-                        <button class="btn-primary btn-plus">+</button>
-                    </td>
-                </tr>
+                
+                
 
-                <tr class="sumtr">
+                @*<tr class="sumtr">
                     <td colspan="2">Tổng cộng</td>
                     <td colspan="3">20000<span>&nbsp;&nbsp;vnđ</span></td>
                 </tr>
                 <tr>
                     <td colspan="5"><button class="btn btn-success">Đặt giao hàng</button></td>
-                </tr>
+                </tr>*@
             </tbody>
         </table>
     </div>
     <div class="tfooter">
-        <img style="width: 100%; height: auto" src="img/footer.jpg">
+        @*<img style="width: 100%; height: auto" src="~/Images/footer.jpg">*@
+        <div class="tFooterAbout">
+            <div>
+                <div class="col-12 col-sm-6 col-md-4 text-center h5">
+                    <div class="h1">
+                        <i class="fa fa-shield footerIcons" aria-hidden="true"></i>
+                    </div>
+                    <p class="lead">An Toàn</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 text-center h5">
+                    <div class="h1">
+                        <i class="fa fa-credit-card footerIcons" aria-hidden="true"></i>
+                    </div>
+                    <p class="lead">Thanh Toán bằng tiền mặt</p>
+                </div>
+                <div class="col-12 col-md-4 text-center h5">
+                    <div class="h1">
+                        <i class="fa fa-rocket footerIcons" aria-hidden="true"></i>
+                    </div>
+                    <p class="lead">Ship nhanh</p>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <div>
+                <ul class="ulBig">
+                    <li>
+                        <ul>
+                            <li class="tFooterAbout_HeadLine">Về chúng tôi</li>
+                            <li><a class="tFooterAbout_a">Ý tưởng</a></li>
+                            <li><a class="tFooterAbout_a">Chính sách</a></li>
+                            <li><a class="tFooterAbout_a">Điều khoản</a></li>
+                            <li><a class="tFooterAbout_a">Cam kết</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li class="tFooterAbout_HeadLine">Liên hệ</li>
+                            <li><a class="tFooterAbout_a">Tuyển dụng</a></li>
+                            <li><a class="tFooterAbout_a">Đăng ký cấp hàng</a></li>
+                            <li><a class="tFooterAbout_a">Đăng ký</a></li>
+                            <li><a class="tFooterAbout_a">Hợp tác</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li class="tFooterAbout_HeadLine">Liên kết ngoài</li>
+                            <li><a class="tFooterAbout_a">Facebook</a></li>
+                            <li><a class="tFooterAbout_a">Instagram</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tFooterContact">
+            ©2017 TableNow – Đặt chỗ & Ưu đãi - A Foody Corporation ĐC: Lầu 8, Tòa nhà Jabes 1, 244 Cống Quỳnh, P. Phạm Ngũ Lão, Quận 1, Tp.HCM - Hotline: 1900 6044 <br /> Số giấy phép ĐKKD: 0311828036 do sở Kế hoạch và Đầu Tư TPHCM cấp ngày 11/06/2012
+        </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/home.js")"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/myJS/home.js")"></script>*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

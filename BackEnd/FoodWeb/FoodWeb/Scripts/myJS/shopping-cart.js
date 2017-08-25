@@ -1,16 +1,38 @@
-$(document).ready(function() {
+var text;
+var total = 0;
+
+$(document).ready(function () {
     
     var ids = getArrayCookies("FoodId");
     var names = getArrayCookies("FoodName");
     var prices = getArrayCookies("FoodPrice");
     var quantitys = getArrayCookies("FoodQuantity");
     if (ids) {
-        var text = "";
+        var tbody, tr, td;
+        text = "";
+        total = 0;
+        $("#tTable").empty();
+        $('#tTable').append('<thead><th>ID</th><th class="thName">Ten Mon</th><th class="thPrice">Giá</th><th>Số lượng</th><th></th></thead>');
+        tbody = $('<tbody/>');
         for (var i = 0; i < ids.length; i++) {
             text = text.concat(makeRow(i + 1, ids[i], names[i], quantitys[i], prices[i]));
+            total = total + (parseInt(quantitys[i]) * parseInt(moneyToInt(prices[i])));
         }
-        $("tTable").html(text);
+        tbody.append(text);
+
+        tr = $('<tr class="sumtr"/>');
+        td = $('<td colspan="2">Tổng cộng</td>');
+        tr.append(td);
+        td = $('<td colspan="3">'+ total +'<span>&nbsp;&nbsp;VNĐ</span></td>');
+        tr.append(td);
+        $(tbody).append(tr);
+        tr = $('<tr/>');
+        tr.append('<td colspan="5"><button class="btn btn-success">Đặt giao hàng</button></td>');
+        $(tbody).append(tr);
+
+        $("#tTable").append(tbody);
     } else {
+        $("#tTable").empty();
         emptyCart();
         // var text = "";
         // for (var i = 0; i < 10; i++) {
@@ -25,10 +47,8 @@ $(document).ready(function() {
 })
 
 function emptyCart() {
-    var obj = $(".section").find(".container");
-    obj.addClass("text-center");
-    obj.html("<p>Ooppss... Chưa có gì trong giỏ hàng.</p>" +
-        "<p>Nhấn vào <a class='alert-link' href='#'>đây</a> để quay lại menu</p>");
+    $('.tbody').append("<p class='cartEmpty'>Ooppss... Chưa có gì trong giỏ hàng.</p>" +
+        "<p class='cartEmpty'>Nhấn vào <a class='alert-link' href='MainPage'>đây</a> để quay lại đặt hàng</p>");
 }
 
 function getIdPos(id, idList) {
@@ -42,16 +62,25 @@ function getIdPos(id, idList) {
 }
 
 function makeRow(no, id, name, quantity, price) {
+    
     var res = "<tr>" +
         "<td>" + no + "</td>" +
         "<td id='" + id + "'>" + name + "</td>" +
-        "<td>" + quantity + "</td>" +
-        "<td>" + price + " x " + quantity + " = " + intToMoney(quantity * moneyToInt(price)) + "</td>" +
-        "<td><a class='alert-link' id='delete' data-toggle='tooltip' data-placement='top' title='Hủy'><i class='now-ui-icons ui-1_simple-remove'></i></a></td>" +
+        "<td>" + price + "</td>" +
+        //"<td>" + price + " x " + quantity + " = " + intToMoney(quantity * moneyToInt(price)) + "</td>" +
+        "<td> <button class='btn-primary btn-minute' onclick='desc(\"#quan" + no + "\",\"" + id + "\")'>-</button>&nbsp;<b id='quan" + no + "'>"
+        + quantity +
+        "</b>&nbsp;<button class='btn-primary btn-plus' onclick='asc(\"#quan" + no + "\",\"" + id + "\")'>+</button></td>" +
+        "<td><button class='btn btn- primary' onclick='deleteRow(" + no + ")'>X</button></td>" +
         "</tr>";
     return res;
 }
 
+//<td>
+//    <button class="btn-primary btn-minute">-</button>
+//    <b>10</b>
+//    <button class="btn-primary btn-plus">+</button>
+//</td>
 function moneyToInt(money) {
     money = money.trim();
     var res = 0;
@@ -78,13 +107,13 @@ function intToMoney(int) {
     return money;
 }
 
-function deleteRow(parent) {
-    var id = parent.children("td:nth-child(2)").attr("id");
+function deleteRow(foodId) {
+    //var id = parent.children("td:nth-child(2)").attr("id");
     var ids = getArrayCookies("FoodId");
     var names = getArrayCookies("FoodName");
     var prices = getArrayCookies("FoodPrice");
     var quantitys = getArrayCookies("FoodQuantity");
-    var pos = getIdPos(id, ids);
+    var pos = getIdPos(foodId, ids);
     ids.splice(pos, 1);
     names.splice(pos, 1);
     quantitys.splice(pos, 1);
@@ -104,9 +133,10 @@ function deleteRow(parent) {
         $("#badge-count").addClass("invisible");
         emptyCart();
     }
-    parent.find("a").tooltip('dispose');
-    parent.remove();
-    updateNo();
+    location.reload();
+    //parent.find("a").tooltip('dispose');
+    //parent.remove();
+    //updateNo();
 }
 
 function updateNo() {
@@ -115,4 +145,35 @@ function updateNo() {
         $(this).text(i);
         i++;
     })
+}
+
+function desc(tagId, foodId) {
+    var quan = parseInt($(tagId).text());
+    if (quan > 1) {
+        $(tagId).empty();
+        $(tagId).append(quan - 1);
+
+        var ids = getArrayCookies("FoodId");
+        var quantitys = getArrayCookies("FoodQuantity");
+        var pos = getIdPos(foodId, ids);
+        quantitys[pos] = quan - 1;
+        addArrayCookies("FoodQuantity", quantitys, 1);
+    }
+    if (quan == 1) {
+        deleteRow(tagId.substring(4));
+    }
+}
+
+function asc(tagId, foodId) {
+    var quan = parseInt($(tagId).text());
+    if (quan < 200) {
+        $(tagId).empty();
+        $(tagId).append(quan + 1);
+
+        var ids = getArrayCookies("FoodId");
+        var quantitys = getArrayCookies("FoodQuantity");
+        var pos = getIdPos(foodId, ids);
+        quantitys[pos] = quan + 1;
+        addArrayCookies("FoodQuantity", quantitys, 1);
+    }
 }

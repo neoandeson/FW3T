@@ -18,13 +18,58 @@ var loadedProduct = [];
 var imgarr = [];
 var commentarr = [];
 
+function desc() {
+    var quan = parseInt($('#order_quantity').text());
+    if (quan > 1) {
+        $('#order_quantity').empty();
+        $('#order_quantity').append(quan - 1);
+    }
+}
+
+function asc() {
+    var quan = parseInt($('#order_quantity').text());
+    if (quan < 200) {
+        $('#order_quantity').empty();
+        $('#order_quantity').append(quan + 1);
+    }
+}
+$(function () {
+    var availableTags = [
+        "Ga",
+        "Ga chien",
+        "Lau",
+        "Lau bo",
+        "Lau Hai San",
+        "Lau Ca",
+        "Kem",
+        "Kem que",
+        "Kem Vani",
+        "Kem Socola",
+        "Tra Sua",
+        "O'Cha",
+        "Milk",
+        "Coffee",
+        "Pho",
+        "Pho Bo",
+        "Pho Ga",
+        "Com suon",
+        "Com Ga Xoi Mo",
+        "Hu tiu mi",
+        "Xoi",
+        "Bun Rieu"
+    ];
+    $("#tags").autocomplete({
+        source: availableTags
+    });
+});
+
 function updatePopUp(idMonAn, tenMonAn, artical, rating, discount, price) {
 //    $.ajax({
 //        
     //    });
     $('#myModalLabel').empty();
     $('#myModalLabel').append(tenMonAn);
-    var div;
+    var div, select;
     $('#DetailsPane').empty();
     div = $('<div class="control-group DetailsPane"/>');
     div.append('<label class="control-label"><h3>' + tenMonAn + '</h3></label >');
@@ -32,9 +77,10 @@ function updatePopUp(idMonAn, tenMonAn, artical, rating, discount, price) {
 
     for (var i = 0; i < imgarr.length; i++) {
         if (imgarr[i].Id == idMonAn) {
-            for (var j = 0; j < imgarr[i].img.length; j++) {
+            for (var j = 1; j < imgarr[i].img.length; j++) {
                 div.append('<img src="' + imgarr[i].img[j] + '"/>');
             }
+            break;
         }
     }
     $('#DetailsPane').append(div);
@@ -52,16 +98,44 @@ function updatePopUp(idMonAn, tenMonAn, artical, rating, discount, price) {
             for (var j = 0; j < commentarr[i].cmt.length; j++) {
                 $('#CommentPane').append('<h5>' + commentarr[i].cmt[j] + '</h5>');
             }
+            break;
         }
     }
+
+    $('#OrderPane').empty();
+    $('#OrderPane').append('<input type="hidden" id="idMonAn" value="' + idMonAn + '">');
+    for (var i = 0; i < imgarr.length; i++) {
+        if (imgarr[i].Id == idMonAn) {
+            $('#OrderPane').append('<img src="'+ imgarr[i].img[0] + '">');
+            break;
+        }
+    }
+    div = $('<div class="popupContent"/>');
+    div.append('<button class="available"></button>&nbsp;Sẵn sàng phục vụ<br/><br/>');
+    //div.append('<button class="notAvailable"></button>&nbsp;Tạm ngưng phục vụ<br/><br/>');
+    div.append('<i class="fa fa-money" ></i > Chọn giá:');
+    select = $('<select id="order_price"/>');
+    select.append('<option>30000</option>');
+    select.append('<option>35000</option>');
+    select.append('<option>40000</option>');
+    div.append(select);
+    div.append('&nbsp; vnđ <br/><br/><div class="popUpContent_Description" id="popUpContent_Description"><div/>');
+    div.append('So luong:'+
+        '<button class="btn-primary btn-minute" onclick="desc()"> -</button >'+
+        '&nbsp;<b id="order_quantity">1</b> &nbsp;'+
+        '<button class="btn-primary btn-plus" onclick="asc()">+</button> <br/> <br/>'+
+        '<button class="btn btn-success" onclick="addAFood()">Đặt</button>'+
+        '<br />'+
+        '<img src="Images/Pay.png">');
+    $('#OrderPane').append(div);
 }
 
 function addAFood()
 {
     var foodId = $('#idMonAn').val();
-    var foodName = $('#tenMonAn').val();
-    var foodPrice = $('#giaMonAn').val();
-    var quantitys = $('#idSoluong').val();
+    var foodName = $('#myModalLabel').text();
+    var foodPrice = $('#order_price').val();
+    var quantitys = $('#order_quantity').text();
     
     console.log(foodId + foodName + foodPrice + quantitys);
     addFood(foodId, foodName, foodPrice, quantitys);

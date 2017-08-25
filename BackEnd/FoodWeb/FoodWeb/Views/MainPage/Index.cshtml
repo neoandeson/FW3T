@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="@Url.Content("~/Content/myCSS/bootstrap.min.css")">
     <link rel="stylesheet" href="@Url.Content("~/fonts/font-awesome-4.7.0/css/font-awesome.css")">
     <link rel="stylesheet" href="@Url.Content("~/Content/myCSS/home.css")">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 </head>
 
@@ -33,7 +34,7 @@
                     <li><a class="tmainMenua" href="#">Liên Hệ</a></li>
                     <li>
                         <a class="tmainMenua" href="@Url.Content("~/CartPage")">Giỏ Hàng</a>
-                        <div class="tCartNumber" id="tCartNumber">19</div>
+                        <div class="tCartNumber" id="badge-count">19</div>
                     </li>
                     <li><a class="tmainMenua" href="login.html" id="tLogin">Đăng nhập</a></li>
                 </ul>
@@ -49,7 +50,7 @@
                     <div class="col-lg-3">
                         <!--input-group-->
                         <div class="input-group custom-search-form">
-                            <input type="text" class="form-control tSearchInput" placeholder="Tìm kiếm...">
+                            <input type="text" id="tags" class="form-control tSearchInput" placeholder="Tìm kiếm...">
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" type="button">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -168,9 +169,6 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Ten Mon An</h4>
-                                <input type="hidden" id="idMonAn" value="1">
-                                <input type="hidden" id="tenMonAn" value="Mon an So 1">
-                                <input type="hidden" id="giaMonAn" value="20000">
                             </div>
                             <div class="modal-body" id="modal-body">
                                 <ul class="nav nav-tabs" id="tabContent">
@@ -188,10 +186,10 @@
                                             <h4>
                                                 Món phở được coi là tinh hoa ẩm thực của người dân Thủ đô. Phở ở đây rất ngon và có nhiều vị như phở bò, phở gà cùng nhiều thương hiệu nổi tiếng như Phở Thìn, Phở Lý Quốc Sư, Phở Bát Đàn…. Không chỉ là món ăn quen thuộc của người dân mà phở còn là “đặc sản” mà bất cứ du khách nước ngoài nào đến Hà Nội đều muốn thưởng thức ít nhất 1 lần.
                                             </h4>
-                                            <img src="../assets/img/food/6.jpg">
+                                            @*<img src="../assets/img/food/6.jpg">
                                             <img src="../assets/img/food/7.jpg">
                                             <img src="../assets/img/food/8.jpg">
-                                            <img src="../assets/img/food/9.jpg">
+                                            <img src="../assets/img/food/9.jpg">*@
                                         </div>
                                     </div>
 
@@ -211,17 +209,24 @@
                                         <h5>Mon nay ngon lam</h5>
                                     </div>
                                     <div class="tab-pane OrderPane" id="OrderPane">
-                                        <img src="../assets/img/food/11.jpg">
+                                        <input type="hidden" id="idMonAn" value="1">
+                                        @*<img src="../assets/img/food/11.jpg">*@
                                         <div class="popupContent">
-                                            <!--                                        <button class="notAvailable"></button>Tạm ngưng phục vụ-->
-                                            <button class="available"></button>&nbsp;Sẵn sàng phục vụ<br />
-                                            <i class="fa fa-money"></i> 30000 vnđ<br />
-                                            <button class="btn-primary btn-minute">-</button>
-                                            <b>10</b>
-                                            <button class="btn-primary btn-plus">+</button>
-                                            &nbsp; <button class="btn btn-success">Đặt</button>
+                                            <!--<button class="notAvailable"></button>Tạm ngưng phục vụ-->
+                                            <button class="available"></button>&nbsp;Sẵn sàng phục vụ<br/><br/>
+                                            <i class="fa fa-money"></i>Chon gia:
+                                            <select id="order_price">
+                                                <option>30000</option>
+                                                <option>35000</option>
+                                                <option>40000</option>
+                                            </select>&nbsp; vnd <br/><br/>
+                                            So luong:
+                                            <button class="btn-primary btn-minute" onclick="desc()">-</button>
+                                            &nbsp;<b id="order_quantity">1</b>&nbsp;
+                                            <button class="btn-primary btn-plus" onclick="asc()">+</button><br/><br/>
+                                            <button class="btn btn-success" onclick="addAFood()">Đặt</button>
                                             <br />
-                                            <img src="~/Images/Pay.png">
+                                            <img src="Images/Pay.png">
                                         </div>
                                     </div>
                                 </div>
@@ -317,8 +322,7 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/cookies-base.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/badge-count.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/food-list.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/myJS/shopping-cart.js")"></script>
-    
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/myJS/shopping-cart.js")"></script>*@
 </body>
 
 </html>
